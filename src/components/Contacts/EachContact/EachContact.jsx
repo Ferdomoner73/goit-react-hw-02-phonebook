@@ -17,8 +17,8 @@ export const EachContact = ({ contact, handleDelete }) => {
 
 EachContact.propTypes = {
   contact: PropTypes.shape({
-    name: PropTypes.string,
-    number: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
   }),
-  handleDelete: PropTypes.func,
+  handleDelete: PropTypes.func.isRequired,
 };

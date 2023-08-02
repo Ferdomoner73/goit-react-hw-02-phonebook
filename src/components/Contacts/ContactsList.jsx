@@ -30,10 +30,10 @@ export const ContactsList = ({ contacts, handleChange, handleDelete }) => {
 ContactsList.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
-      name: PropTypes.string,
-      number: PropTypes.string,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
     })
   ),
-  handleChange: PropTypes.func,
-  handleDelete: PropTypes.func,
+  handleChange: PropTypes.func.isRequired,
+  handleDelete: PropTypes.func.isRequired,
 };

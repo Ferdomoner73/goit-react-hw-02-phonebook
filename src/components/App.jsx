@@ -74,8 +74,8 @@ App.propTypes = {
   INITITAL_VALUES: PropTypes.shape({
     contacts: PropTypes.arrayOf(
       PropTypes.shape({
-        name: PropTypes.string,
-        number: PropTypes.string,
+        name: PropTypes.string.isRequired,
+        number: PropTypes.string.isRequired,
       })
     ),
   }),
