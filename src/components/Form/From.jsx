@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Formik, Form, ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';
-import { FormSection, FormTitle, FormComponent } from './form.styled';
+import { FormSection, FormTitle } from './form.styled';
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
