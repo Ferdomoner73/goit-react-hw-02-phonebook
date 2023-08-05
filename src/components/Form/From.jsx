@@ -30,7 +30,10 @@ export const ContactsForm = ({ handleSubmit }) => {
           number: '',
         }}
         validationSchema={SignupSchema}
-        onSubmit={handleSubmit}
+        onSubmit={(values, actions) => {
+          handleSubmit(values);
+          actions.resetForm();
+        }}
       >
         <Form>
           <label htmlFor={nameUniqueId}>Name</label>
