@@ -14,10 +14,26 @@ const INITITAL_VALUES = {
   filter: '',
 };
 
+const CONTACTS_KEY = 'contacts';
+
 export class App extends Component {
   state = {
     ...INITITAL_VALUES,
   };
+
+  componentDidMount() {
+    const storegedContacts = localStorage.getItem(CONTACTS_KEY);
+    const parsedContacts = JSON.parse(storegedContacts);
+    this.setState({ contacts: parsedContacts });
+  }
+
+  componentDidUpdate(_, prevState) {
+    const { contacts } = this.state;
+
+    if (prevState.contacts !== contacts) {
+      localStorage.setItem(CONTACTS_KEY, JSON.stringify(contacts));
+    }
+  }
 
   addNewContact = e => {
     if (
